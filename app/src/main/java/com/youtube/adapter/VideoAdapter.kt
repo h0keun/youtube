@@ -5,7 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -45,16 +44,15 @@ class VideoAdapter: ListAdapter<VideoModel, VideoAdapter.ViewHolder>(diffUtil) {
     }
 
     companion object {
-        val diffUtil = object: DiffUtil.ItemCallback<ViewModel>() {
-            override fun areItemsTheSame(oldItem: ViewModel, newItem: ViewModel): Boolean {
+        val diffUtil = object: DiffUtil.ItemCallback<VideoModel>(){
+            override fun areItemsTheSame(oldItem: VideoModel, newItem: VideoModel): Boolean {
                 return oldItem == newItem // 이부분은 사실 모델에서 고유한 아이디 값을 통해 중복체크하는편이 더 좋음..여기선 그냥 old 와 new 로 구분
             }
 
-            override fun areContentsTheSame(oldItem: ViewModel, newItem: ViewModel): Boolean {
+            override fun areContentsTheSame(oldItem: VideoModel, newItem: VideoModel): Boolean {
                 return oldItem == newItem
             }
 
         }
     }
 }
-
