@@ -2,7 +2,7 @@
 + MotionLayout
 + Exoplayer
 + RecyclerView
-+ make API > Retrofit
++ Make mockyAPI & Retrofit
 
 ### MotionLayout [📌](https://developer.android.com/training/constraint-layout/motionlayout/examples?hl=ko)
 + ConstraintLayout
