@@ -1,7 +1,7 @@
 ### youtube
 + MotionLayout
 + Exoplayer
-+ RecyclerView
++ RecyclerView + Glide
 + Make mockyAPI & Retrofit
 
 ### MotionLayout [📌](https://developer.android.com/training/constraint-layout/motionlayout/examples?hl=ko)
