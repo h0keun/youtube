@@ -17,7 +17,7 @@ import com.youtube.model.VideoModel
 // 이 프로젝트에서는 하나의 UI 를 활용하는 방식으로 하나의 어댑터만 사용
 // 실제 유투브 앱을 보더라도 리사이클러뷰가 각각 다른 어댑터와 아이템들을 보여줌!
 
-class VideoAdapter: ListAdapter<VideoModel, VideoAdapter.ViewHolder>(diffUtil) {
+class VideoAdapter(val callback: (String, String) -> Unit): ListAdapter<VideoModel, VideoAdapter.ViewHolder>(diffUtil) {
 
     inner class ViewHolder(private val view: View): RecyclerView.ViewHolder(view) {
 
@@ -32,6 +32,10 @@ class VideoAdapter: ListAdapter<VideoModel, VideoAdapter.ViewHolder>(diffUtil) {
             Glide.with(thumbnailImageView.context)
                 .load(item.thumb)
                 .into(thumbnailImageView)
+
+            view.setOnClickListener {
+                callback(item.sources, item.title)
+            }
         }
     }
 

@@ -12,7 +12,7 @@
             motion:touchAnchorSide="bottom" />
     </Transition>
 
-    <ConstraintSet>
+    <ConstraintSet android:id="@+id/start">
         <Constraint
             android:id="@+id/fragmentRecyclerView"
             android:layout_width="0dp"
